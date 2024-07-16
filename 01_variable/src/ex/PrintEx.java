@@ -66,7 +66,6 @@ public class PrintEx {
 		System.out.printf("%s은 %d세 %c으로, %.1fcm이고 자바 공부 여부 : %b", name, age, gender, height, javaStudy);
 		System.out.println();
 
-		
 		double num = 1.25;
 		System.out.printf("%6s / %.1f", name, num);
 		
