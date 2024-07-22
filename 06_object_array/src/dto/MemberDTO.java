@@ -5,6 +5,8 @@ package dto;
 
 public class MemberDTO {
 	
+
+	
 	private String memberId;
 	private String memberPw;
 	private String memberName;
