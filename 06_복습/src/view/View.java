@@ -45,10 +45,13 @@ public class View {
 				service.selectName();
 				break;
 			case 5:	
+				service.updateIndex();
 				break;
 			case 6:	
+				service.score();
 				break;
 			case 7:	
+				service.rank();
 				break;
 			case 0:	
 				System.out.println("프로그램 종료");

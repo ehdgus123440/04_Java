@@ -1,5 +1,6 @@
 package dto;
 
+
 public class DTO {
 	private String studentName;
 	private String studentNumber;
@@ -9,10 +10,26 @@ public class DTO {
 	private int js;
 	private int java;
 	
+	
 	public DTO(String name, String number, char gender) {
 		studentName = name;
 		studentNumber = number;
 		this.gender = gender;
+		
+		this.html =	(int) (Math.random()*101);
+		this.css = 	(int) (Math.random()*101);
+		this.js = 	(int) (Math.random()*101);
+		this.java = (int) (Math.random()*101);
+		
+		
+		
+	}
+	
+	public DTO(int html, int css, int js, int java) {
+		this.html = html;
+		this.css = css;
+		this.js = js;
+		this.java = java;	
 	}
 	
 
