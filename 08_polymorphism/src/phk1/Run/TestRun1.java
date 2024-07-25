@@ -38,7 +38,14 @@ public class TestRun1 {
 		arr[1] = new Child();
 		arr[2] = new Object();
 		
-
+		// -> 매개 변수의 다형성이 적용되지 않았다면
+				// 각 자료형 별로 매개 변수를 전달 받는 메서드를
+				// 계속 오버로딩을 해야하는 문제 발생!!
+				
+				// ex)
+				// public void printObject(Object o)
+				// public void printObject(Parent p)
+				// public void printObject(Child  c)
 		
 		
 		
