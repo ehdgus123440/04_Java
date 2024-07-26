@@ -1,49 +1,42 @@
 package asd;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Stack;
+import java.util.Vector;
+
 public class asdf {
-	public int[][] solution(int n) {
-		int[][] answer = {};
-		answer = new int[n][n];
-		 int num = 1;
-	        int minrow = 0;
-	        int mincol = 0;
-	        int maxrow = n-1;
-	        int maxcol = n-1;
-	        while(num<=n*n){
-	            // 오른쪽
-	            for(int i=mincol; i<=maxcol; i++){
-	                answer[minrow][i]=num++;
-	            }
-	            // 아래
-	            for(int i=minrow+1; i<=maxrow; i++){
-	                answer[i][maxcol]=num++;
-	            }
-	            // 왼쪽
-	            for(int i=maxcol-1; i>=mincol; i--){
-	                answer[maxrow][i]=num++;
-	            }
-	            // 위
-	            for(int i=maxrow-1; i>=minrow+1; i--){
-	                answer[i][mincol]=num++;
-	            }
-	            minrow++;
-	            mincol++;
-	            maxrow--;
-	            maxcol--;
-	        }
-
-		
-		return answer;
-	}
-
 	public static void main(String[] args) {
-		asdf a = new asdf();
-		int[][] answer = a.solution(4);
-		for(int i = 4; i < 4; i++) {
-			for(int j = 4; j < 4; j++) {
-				System.out.print(answer[i][j] + " ");
-			}
-			System.out.println();
-		}
+		Stack<String> stack = new Stack<String>();
+        stack.push("Hello");
+        stack.push("World!");
+        stack.push("Hello");
+        stack.push("Hello");
+  
+        // Stack Iterator 선언
+        Iterator<String> itr
+            = stack.iterator();
+  
+        // 결과 출력
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + " ");
+        }
+  
+  		// Enter입력
+        System.out.println();
+  
+  		// 후입선출
+        stack.pop();
+  
+        // 재정의
+        itr
+            = stack.iterator();
+  
+        // 결과 출력
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + " ");
+        }
+
 	}
 }
