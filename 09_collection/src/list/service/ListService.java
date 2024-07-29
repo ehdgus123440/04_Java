@@ -1,7 +1,9 @@
 package list.service;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class ListService {
 
@@ -143,6 +145,45 @@ public class ListService {
 		// 존재하지 않으면 -1 반환
 		System.out.println("삼겹살 : " + menuList.indexOf("삼겹살"));
 		System.out.println("오겹살 : " + menuList.indexOf("오겹살"));
+
+	}
+
+	public void test3() {
+//		List<Integer> list = new ArrayList<Integer>();
+		List<Integer> list = new LinkedList<Integer>();
+
+		Random random = new Random();
+
+		// System.currentTimeMillis()
+		// -> 1970년 1월 1일 09:00:00.00 기준으로
+		// 현재 시간 까지 지난 시간을 ms로 반환(long)
+//		System.out.println( System.currentTimeMillis() );
+//		System.out.println( System.nanoTime() );
+
+		long start = System.currentTimeMillis();
+
+		for (int i = 0; i < 1000000; i++) { // 100만 바퀴
+			list.add(random.nextInt(100000)); // 0 ~ 99999 사이 난수
+		}
+
+		long end = System.currentTimeMillis();
+
+		System.out.println("생성 완료 - 걸린 시간 : " + (end - start) + "ms");
+
+		// 추가 시간 확인
+		start = System.nanoTime();
+
+		list.add(500000, 123456789); // 중간에 데이터 삽입
+
+		end = System.nanoTime();
+		System.out.println("추가 시간 : " + (end - start) + "nm");
+
+		// 검색 시간 확인
+		start = System.currentTimeMillis();
+		System.out.println(list.indexOf(123456789));
+		end = System.currentTimeMillis();
+
+		System.out.println("검색 시간 : " + (end - start) + "ms");
 
 	}
 
