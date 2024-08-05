@@ -3,7 +3,9 @@ package view;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
+import dto.Todo;
 import service.*;
 
 public class TodoListView {
@@ -32,10 +34,12 @@ public class TodoListView {
 				int input = Integer.parseInt(br.readLine());
 				switch (input) {
 				case 1:
+					FullView();
 					break;
 				case 2:
 					break;
 				case 3:
+					Todoadd();
 					break;
 				case 4:
 					break;
@@ -74,4 +78,25 @@ public class TodoListView {
 
 		System.out.print("select menu number >>>");
 	}
+
+	private void FullView() {
+		System.out.println("===============[1. Todo List Full View]===============");
+		System.out.println("--------------------------------------------------------------------");
+		System.out.println("인덱스        등록일         완료여부     할 일 제목");
+		List<Todo> list = service.FullView();
+		for(int i = 1; i <= list.size(); i++) {
+			System.out.println(list.get(i));
+			
+		}
+	}
+
+	private void Todoadd() throws Exception{
+		System.out.print("할 일 제목 입력 : ");
+		String inputTitle = br.readLine();
+		String inputDetail = br.readLine();
+		service.Todoadd(inputTitle, inputDetail);
+	}
+
+
+
 }

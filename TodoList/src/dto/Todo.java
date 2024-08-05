@@ -31,4 +31,13 @@ public class Todo implements Serializable{
 	//  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 	//  String formattedDateTime = currentDateTime.format(formatter);
 	
+	public Todo(String title, String detail, boolean complete) {
+		this.title = title;
+		this.detail = detail;
+		this.complete = complete;
+		this.regDate = LocalDateTime.now();
+	}
+	
+	
+	
 }
